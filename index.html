@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10172a">
+  <title>Battle Bangun Ruang 1v1 - Rebutan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GAME EDUKASI MATEMATIKA BUATAN YUDA</p>
+        <h1>⚔️ Battle Bangun Ruang</h1>
+        <p class="subtitle">Mode rebutan • Dua kelompok • Tampil di Smart TV</p>
+      </div>
+      <button id="fullscreenBtn" class="button button-ghost" type="button">⛶ Layar penuh</button>
+    </header>
+
+    <section class="scoreboard" aria-label="Papan skor">
+      <article class="team-card team-a">
+        <span class="team-label">KELOMPOK A</span>
+        <input id="teamAName" class="team-name" value="Tim Kubus" maxlength="24" aria-label="Nama Kelompok A">
+        <strong id="scoreA" class="score">0</strong><span class="points-label">POIN</span>
+      </article>
+      <div class="versus">VS</div>
+      <article class="team-card team-b">
+        <span class="team-label">KELOMPOK B</span>
+        <input id="teamBName" class="team-name" value="Tim Balok" maxlength="24" aria-label="Nama Kelompok B">
+        <strong id="scoreB" class="score">0</strong><span class="points-label">POIN</span>
+      </article>
+    </section>
+
+    <section class="game-panel">
+      <div class="game-meta">
+        <span id="roundLabel" class="pill">Siap bermain</span>
+        <span id="statusLabel" class="turn-label">Atur nama tim, lalu mulai!</span>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+
+      <section id="welcome" class="center-section">
+        <div class="hero-icon">(ง •̀_•́)ง Gambare</div>
+        <h2>Siapa paling cepat?</h2>
+        <p>Perwakilan kelompok maju ke layar. Saat soal muncul, tekan tombol rebutan kelompokmu. Kelompok yang tercepat berhak memilih jawaban.</p>
+        <div class="rules">
+          <div><b>+10 poin</b><span>Jawaban benar</span></div>
+          <div><b>0 poin</b><span>Jawaban salah</span></div>
+          <div><b>10 detik</b><span>Batas waktu menjawab</span></div>
+          <div><b>12 soal</b><span>Sangat mudah</span></div>
+        </div>
+        <button id="startBtn" class="button button-primary button-large" type="button">Mulai Pertandingan</button>
+      </section>
+
+      <section id="buzzArea" class="center-section hidden">
+        <p id="questionNumber" class="question-number">SOAL 1</p>
+        <h2 id="questionText" class="question-text"></h2>
+        <p class="instruction">Perwakilan kelompok: tekan tombol rebutan secepat mungkin!</p>
+        <div class="buzz-buttons">
+          <button id="buzzA" class="buzz-button buzz-a" type="button">🔔 REBUTAN<br><span id="buzzAName">TIM KUBUS</span></button>
+          <button id="buzzB" class="buzz-button buzz-b" type="button">🔔 REBUTAN<br><span id="buzzBName">TIM BALOK</span></button>
+        </div>
+        <p id="buzzFeedback" class="feedback" role="status" aria-live="polite"></p>
+        <div id="answerArea" class="hidden">
+          <div id="answerTimer" class="answer-timer hidden" aria-live="polite">10</div>
+          <p id="answerTurn" class="answer-turn"></p>
+          <div id="answers" class="answers"></div>
+          <p id="answerFeedback" class="feedback" role="status" aria-live="polite"></p>
+          <button id="nextBtn" class="button button-primary hidden" type="button">Soal berikutnya →</button>
+        </div>
+      </section>
+
+      <section id="resultArea" class="center-section hidden">
+        <div class="hero-icon">🏆</div>
+        <p class="eyebrow">PERTANDINGAN SELESAI</p>
+        <h2 id="winnerText">Pemenang!</h2>
+        <p id="resultSummary"></p>
+        <button id="restartBtn" class="button button-primary button-large" type="button">Main Lagi</button>
+      </section>
+    </section>
+
+    <footer><span>Battle Bangun Ruang 1v1</span><span>Belajar • Berpikir • Bertanding</span></footer>
+  </main>
+  <script src="js/questions.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
